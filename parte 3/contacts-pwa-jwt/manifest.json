@@ -1,0 +1,8 @@
+{
+  "name": "Contacts PWA JWT",
+  "short_name": "ContactsJWT",
+  "start_url": "./login.html",
+  "display": "standalone",
+  "background_color": "#0b0d10",
+  "theme_color": "#0b0d10"
+}

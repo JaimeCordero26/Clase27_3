@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo PWA</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" href="data:," />
+  </head>
+
+  <body>
+    <header class="app-header">
+      <div>
+        <h1>ToDo</h1>
+        <p id="netStatus" class="net online">● Online</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="add-bar">
+        <input id="taskInput" type="text" placeholder="Agregar tarea..." />
+        <button id="addBtn" class="primary">+</button>
+      </section>
+
+      <section class="sync-bar">
+        <button id="syncBtn" class="ghost">Importar tareas del servidor</button>
+        <button id="sync-btn">Sincronizar</button>
+        <p id="syncStatus" class="sync-status">
+          Aún no se ha importado información desde el backend.
+        </p>
+      </section>
+
+      <section class="filters">
+        <button class="filter active" data-filter="all">Todas</button>
+        <button class="filter" data-filter="pending">Pendientes</button>
+        <button class="filter" data-filter="done">Completadas</button>
+      </section>
+
+      <section id="list" class="list"></section>
+    </main>
+
+    <div id="editModal" class="modal hidden">
+      <div class="modal-card">
+        <h2>Editar tarea</h2>
+        <input id="editInput" type="text" />
+        <div class="modal-actions">
+          <button id="cancelEditBtn" class="ghost">Cancelar</button>
+          <button id="saveEditBtn" class="primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

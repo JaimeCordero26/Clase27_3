@@ -1,0 +1,14 @@
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username TEXT UNIQUE NOT NULL,
+  password_hash TEXT NOT NULL
+);
+
+CREATE TABLE refresh_tokens (
+  id SERIAL PRIMARY KEY,
+  token      TEXT UNIQUE NOT NULL,
+  user_id    INT  NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  expires    TIMESTAMP NOT NULL,
+  revoked    BOOLEAN   NOT NULL DEFAULT FALSE,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);

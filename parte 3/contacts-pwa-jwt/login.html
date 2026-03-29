@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts PWA - Login</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container narrow">
+      <section class="card">
+        <h1>Contacts PWA</h1>
+        <p class="muted">Login con JWT para consumir el API de contactos.</p>
+
+        <label for="apiBase">URL del API</label>
+        <input id="apiBase" type="text" value="http://localhost:5013" />
+
+        <label for="username">Usuario</label>
+        <input id="username" type="text" placeholder="Ingrese usuario" />
+
+        <label for="password">Contraseña</label>
+        <input id="password" type="password" placeholder="Ingrese contraseña" />
+
+        <div class="actions">
+          <button id="loginBtn" class="primary">Iniciar sesión</button>
+        </div>
+
+        <p id="status" class="status">Esperando credenciales.</p>
+      </section>
+    </main>
+
+    <script type="module" src="./login.js"></script>
+  </body>
+</html>
